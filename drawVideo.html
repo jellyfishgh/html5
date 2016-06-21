@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>drawVideo</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <video id="video1" controls width="400" height="400">
+        <source src="/myphp/html5/images/fenqizhe.mp4" type='video/mp4'>
+    </video>
+    <canvas id="canvas1">Your Browser Does Not Support Canvas Tag.</canvas>
+    <script>
+    var video = document.getElementById("video1"),
+        canvas = document.getElementById("canvas1"),
+        ctx = canvas1.getContext("2d");
+    var i;
+    video.addEventListener('canplay', function() {
+        canvas.width = video.width;
+        canvas.height = video.height;
+    }, false);
+    video.addEventListener('play', function() {
+        i = window.setInterval(function() {
+            ctx.drawImage(video, 0, 0, video.width, video.height);
+        }, 10);
+    }, false);
+    video.addEventListener('pause', function() {
+        window.clearInterval(i);
+    }, false);
+    video.addEventListener('ended', function() {
+        window.clearInterval(i);
+    }, false);
+    </script>
+</body>
+
+</html>

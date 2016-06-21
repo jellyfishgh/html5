@@ -1,0 +1,25 @@
+<body>
+    <script type="text/javascript">
+    //数组里面任意随机选择 n 个对象
+    //会改变原来的数组，所以传进来的数组应该传递拷贝
+    function select(arr, n) {
+        var result = [];
+        for (var i = 0; i < n; i++) {
+            var index = Math.floor(Math.random()*arr.length);
+            result.push(arr.splice(index,1));//删掉index位置的元素，这样result里面不会出现重复的元素
+        }
+        return result;
+    }
+    function print(arr){
+        for(var i = 0; i < arr.length; i++){
+            console.log(arr[i]);
+        }
+        console.log("------");
+    }
+    var arr = [1, 2, 3, 4];
+    for(var i = 0; i < 10; i++){
+       print(select(arr.concat(), 2));
+       print(select(arr.concat(), 3));
+    }
+    </script>
+</body>

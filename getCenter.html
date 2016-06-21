@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>getCenter</title>
+    <style type="text/css">
+    	div{
+    		margin-bottom: 10px;
+    	}
+    </style>
+</head>
+
+<body>
+    <div><img src="http://pic.hsw.cn/0/10/13/05/10130520_504118.jpg" onload="zoom(this, 100, 100)"/></div>
+    <div><img src="http://pic.hsw.cn/0/10/13/05/10130520_504118.jpg"/></div>
+    <script type="text/javascript">
+    function zoom(img, width, height) {
+        var scale = Math.max(width / img.width, height / img.height);
+        var newWidth = img.width * scale;
+        var newHeight = img.height * scale;
+        console.log(newWidth, newHeight);
+        img.width = newWidth;
+        img.height = newHeight;
+        var div = img.parentNode;        
+        div.style.width = width + "px";
+        div.style.height = height + "px";
+        div.style.overflow = "hidden";
+        img.style.marginLeft = (width - newWidth) / 2 + "px";
+        img.style.marginTop = (height - newHeight) / 2 + "px";
+    }
+    </script>
+</body>
+
+</html>

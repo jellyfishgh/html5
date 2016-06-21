@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>center-example</title>
+        <style type="text/css">
+            body{
+                background-color: #363;
+                color: #ff0;
+                font-size: large;
+                text-shadow: black 0.2em 0.2em 0.2em;
+            }
+            div.container{
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: table;
+            }
+            p{
+                display: table-cell;
+                vertical-align: middle;
+            }
+            img.displayed{
+                display: block;
+                margin: 1em auto;
+            }
+            p{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <p>This is vertically and horizontally centered.<img src="images/woolly-mc.jpg" class="displayed" alt="image of a sheep"></p>
+        </div>
+    </body>
+</html>

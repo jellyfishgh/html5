@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>clip</title>
+</head>
+
+<body>
+    <script type="text/javascript" src="get-image-size.js"></script>
+    <script type="text/javascript">
+    var url = "images/2.jpg";
+    function clipEle(top, right, bottom, left){
+        this.style.position = "absolute";
+        this.style.marginLeft = "-"+left+"px";
+        this.style.marginTop = "-"+top+"px";
+        this.style.clip = "rect("+top+"px,"+right+"px,"+bottom+"px,"+left+"px)";
+    }
+    function callback(img, qs) {
+        if(qs===undefined||qs===0)qs=100;
+        var width = img.width,
+            height = img.height,
+            size = width > height ? height : width,
+            scale = qs/size,
+            newHeight = height*scale,
+            newWidth = width*scale,
+            top = (newHeight - qs) / 2,
+            right = (newWidth + qs) / 2,
+            bottom = (newHeight + qs) / 2,
+            left = (newWidth - qs) / 2;
+        img.width = newWidth;
+        img.height = newHeight;
+        console.log(newHeight, newWidth, size, scale, qs);
+        clipEle.call(img, top, right, bottom, left);
+        this.appendChild(img);
+    }
+    //qs->gap:100
+    imgLoad(document.body, url, 300, callback);
+    </script>
+</body>
+
+</html>

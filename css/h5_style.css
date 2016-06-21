@@ -1,0 +1,12 @@
+body,
+div {
+    padding: 0;
+    margin: 0;
+}
+
+div.moment {
+    width: 96%;
+    margin: 0 2%;
+    background-color: #363;
+    position: absolute;
+}

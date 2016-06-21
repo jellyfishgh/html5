@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>导航栏</title>
+    <link href="taobaobase.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+		html{font-size: 10px;}
+		.nav{
+			margin-bottom: 1rem;			
+			font-size: 2rem;
+			line-height: 3rem;
+			text-align: center;
+		}
+		.nav a{background-color: burlywood;text-align: center;}
+		
+    	.xiaomi {
+			background-color: #fcf;
+        	width: 100%;
+        	display: table;
+    	}    
+    	.xiaomi a {
+        	display: table-cell;
+        	width: 25%;
+			border-left: 1px solid #999;
+    	}
+		.xiaomi a:first-child{border-left: none;}
+		
+		.baidu{
+			background-color: #cae;
+			height: 3rem;
+		}
+		.baidu a{
+			float: left;
+			width: 16%;
+		}
+		.baidu a:first-child{margin-left: 2%;}
+		
+		.dangdang{
+			background-color: aqua;
+		}
+		.dangdang a{
+			display: inline-block;
+			width: 23%;
+			font-size: 1.5rem;
+		}
+		
+		.amazon li{display: inline;}
+		.amazon a{
+			display: inline-block;
+			width: 20%;
+			font-size: 1.3rem;
+		}
+		
+		.taobao a{
+			display: inline-block;
+			width: 4rem;
+			font-size: 1rem;
+		}
+		
+		.jd{padding: 0 4px;}
+		.jd a{
+			position: relative;
+			float: left;
+			width: 25%;
+			font-size: 1.4rem;
+		}
+		.jd a:after{
+			content: "\200B";
+			position: absolute;
+			right: 0;
+			top: 0.5rem;
+			display: block;
+			width: 1px;
+			height: 2rem;
+			background-color: #dadada;
+		}
+		
+		.tmall{
+			display: flex;
+			width: 100%;
+		}
+		.tmall a{
+			display: block;
+			border-left: 1px solid #999;
+			flex: 1;
+		}
+		.tmall a:first-child{
+			border: none;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="nav xiaomi">
+        <a href="#1" title="全部商品">热门</a>
+        <a href="#2" title="搜索">促销</a>
+        <a href="#3" title="小米社区">疯抢</a>
+        <a href="#4" title="客户端">购物车</a>
+    </div>
+    <div class="nav baidu">
+        <a href="#1" title="新闻">新闻</a>
+        <a href="#2" title="小说">小说</a>
+        <a href="#3" title="视频">视频</a>
+        <a href="#4" title="生活">生活</a>
+		<a href="#4" title="地图">地图</a>
+   		<a href="#4" title="更多">更多</a>
+	</div>
+	<div class="nav dangdang">
+		<a href="#1">分类</a>
+		<a href="#2">立减</a>
+		<a href="#3">购物车</a>
+		<a href="#4">我的当当</a>
+		<a href="#5">好书榜</a>
+		<a href="#6">童书榜</a>
+		<a href="#7">9块9</a>
+		<a href="#8">电子书</a>
+	</div>
+	<div class="nav amazon">
+		<li><a href="#1">Kindle商店</a></li><li><a href="#2">海外购</a></li><li><a href="#3">进口直采</a></li><li><a href="#4">降价清仓</a></li><li><a href="#5">热门促销</a></li>
+	</div>
+	<div class="nav taobao">
+		<a href="#1">天猫</a>
+		<a href="#2">聚划算</a>
+		<a href="#3">淘生活</a>
+		<a href="#4">淘点点</a>
+		<a href="#5">充值</a>
+		<a href="#6">阿里旅行</a>
+		<a href="#7">领金币</a>
+		<a href="#8">分类</a>
+	</div>
+	<div class="nav jd">
+		<a href="#1" title="分类查询">分类查询</a>
+		<a href="#1" title="物流查询">物流查询</a>
+		<a href="#1" title="购物车">购物车</a>
+		<a href="#1" title="我的京东">我的京东</a>
+		<a href="#1" title="充值">充值</a>
+		<a href="#1" title="">电影票</a>
+		<a href="#1" title="电影票">生活团购</a>
+		<a href="#1" title="我的关注">我的关注</a>
+	</div>
+	<div class="nav tmall">
+		<a href="#1" title="积分乐园">积分乐园</a>
+		<a href="#2" title="充值">充值</a>
+		<a href="#3" title="聚划算">聚划算</a>
+	</div>
+</body>
+
+</html>

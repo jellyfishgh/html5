@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>drawImage</title>
+    <style type="text/css">
+    body {
+        background-color: #000;
+    }
+    
+    canvas {
+        border: 1px green dotted;
+        margin: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <script>
+    //递归
+    function selectImgs(arr, result, n, i, c, length, gap, limit) {
+        if (i === n) return;
+        var index = Math.floor(Math.random() * arr.length),
+            img = new Image(),
+            url = "images/" + arr.splice(index, 1) + ".jpg";
+        img.src = url;
+        if (img.complete) {
+            //draw.call(c.getContext("2d"), img, length, gap, limit, i);
+            result.push(img);
+            addCanvas.call(c.getContext("2d"), result, length, gap, limit, n, c);
+        } else {
+            img.onload = function() {
+                //draw.call(c.getContext("2d"), img, length, gap, limit, i);
+                result.push(img);
+                addCanvas.call(c.getContext("2d"), result, length, gap, limit, n, c);
+                img.onload = null;
+            }
+        }
+        selectImgs(arr, result, n, i + 1, c, length, gap, limit);
+    }
+    //length:图片显示的长度，gap:图片之家你的空隙, limit:一行最多画几张图片
+    function addCanvas(imgs, length, gap, limit, count, c) {
+        for (var i = 0; i < imgs.length; i++) {
+            var x = (i % limit) * (gap + length) + gap,
+                y = Math.floor(i / limit) * (gap + length) + gap,
+                img = imgs[i],
+                width = img.width,
+                height = img.height,
+                size = width > height ? height : width,
+                sx = (width - size) / 2,
+                sy = (height - size) / 2;
+            this.drawImage(img, sx, sy, size, size, x, y, length, length);
+        }
+        if(imgs.length === count){
+        	var img1 = new Image();
+        	img1.title = count;
+        	img1.src = c.toDataURL();
+        	document.body.appendChild(img1);
+        }
+    }
+
+    function draw(img, length, gap, limit, i) {
+        var x = (i % limit) * (gap + length) + gap,
+            y = Math.floor(i / limit) * (gap + length) + gap,
+            width = img.width,
+            height = img.height,
+            size = width > height ? height : width,
+            sx = (width - size) / 2,
+            sy = (height - size) / 2;
+        this.drawImage(img, sx, sy, size, size, x, y, length, length);
+    }
+
+    function init(container, count, arr, length, gap, limit, obj) {
+        var c = document.createElement("canvas");
+        c.innerHTML = "Your Browser Does Not Support Canvas Tag.";
+        c.width = Math.min(count, limit) * (gap + length) + gap;
+        c.height = Math.ceil(count / limit) * (gap + length) + gap;
+        selectImgs(arr, [], count, 0, c, length, gap, limit);
+        // container.appendChild(c);
+    }
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, "woolly-mc"];
+    for (var i = 1; i < 10; i++) {
+        init(document.body, i, arr.concat(), 100, 10, 3);
+    }
+    </script>
+</body>
+
+</html>

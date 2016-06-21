@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>getImageSize</title>
+        <style type="text/css">
+        </style>
+    </head>
+    <body>
+        <script src="image-size.js"></script>
+        <script>
+            var url = "images/1.jpg";
+            imgReady(url, function(){
+                document.body.innerHTML = "ready:"+this.width+","+this.height;
+            }, function(){
+                document.body.appendChild(this);
+            }, function(){
+               document.body.innerHTML = "图片加载失败";
+            });
+        </script>
+    </body>
+</html>

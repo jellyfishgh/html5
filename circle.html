@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>circle</title>
+	<style type="text/css">
+		#img60{border-radius: 50%;}
+	</style>
+</head>
+<body>
+	<img src="images/000_60.png" id="img60">
+	<canvas id="cas" width="60" height="60"></canvas>
+	<script type="text/javascript">
+		var myCanvas = document.getElementById("cas");
+		var ctx = myCanvas.getContext("2d");
+		var img1 = document.getElementById("img60");
+		ctx.drawImage(img1,0,0);//clear周边的四块可以得出一个圆形
+		var img2 = new Image();
+		img2.src = myCanvas.toDataURL("png");
+		document.body.appendChild(img2);
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>js-get-image-size</title>
+        <style type="text/css">
+            canvas{
+                border: 1px dotted #363;
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+    	<script src="get-image-size.js"></script>
+        <script>            
+            for(var i = 9; i > 0; i--){
+            	imgLoad(document.body, "images/"+i+".jpg", 10, initCanvas);
+            }
+        </script>
+    </body>
+</html>

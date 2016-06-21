@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>centering</title>
+        <style type="text/css">
+        	.item{
+        		margin: 10px auto;
+        		padding: 30px;
+        	}
+        	.dot{
+        	    border: 2px red dotted;
+        		padding: 15px;
+        	}
+        	p{
+        		background-color: #363;
+        		color: #ff0;
+        		text-shadow: black 0.2em 0.2em 0.2em;
+        	}
+        	.text-center{
+        		text-align: center;
+        	}        	
+        	.block-center{
+        		width: 6em;
+        		margin: 0 auto;
+        	}
+        	.block{
+        		display: block;
+        	}
+        	.center{
+        		margin: 0 auto;
+        	}
+        	.vertical1{
+        		height: 100px;
+        		min-height: 10px;
+        		display: table-cell;
+        		vertical-align: middle;
+        	}
+        	.vertical2{
+        		position: relative;
+        		height: 10em;
+        	}
+        	div.vertical2 p{
+        		position: absolute;
+        		top: 50%;
+        		margin: 0;
+        		transform: translate(0, -50%);
+        	}
+        	.vertical3{
+        		height: 10em;
+        		position: relative;
+        	}
+        	div.vertical3 p{
+        		margin: 0;
+        		padding: 10px;
+        		position: absolute;
+        		top: 50%;
+        		left: 50%;
+        		margin-right: -50%;
+        		transform: translate(-50%, -50%);
+        	}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        	<div class="item dot">
+        		<h2 class="text-center">thanks to the value 'center' of the CSS property 'text-align'. </h2>
+        		<p class="text-center">The lines in this paragraph are all centered between the paragraph's margins, thanks to the value 'center' of the CSS property 'text-align'. </p>
+        	</div>
+        	<div class="item dot">
+        		<p class="block-center">This rather narrow block of text is centered. Note that the lines inside the block are not centered (they are left-aligned), unlike in the earlier example. </p>
+        	</div>
+        	<div class="item dot">
+        		<img src="images/woolly-mc.png" class="block center">
+        	</div>
+        	<div class="item dot vertical1">
+        		<p>This small paragraph is vertically centered.</p>
+        	</div>
+        	<div class="item dot vertical2">
+        		<p>This paragraph is vertically centered.</p>
+        	</div>
+        	<div class="item dot vertical3">
+        		<p>This paragraph is vertically centered.This paragraph is vertically centered.This paragraph is vertically centered.This paragraph is vertically centered.This paragraph is vertically centered.This paragraph is vertically centered.This paragraph is vertically centered.This paragraph is vertically centered.</p>
+        	</div>
+        </div>
+    </body>
+</html>

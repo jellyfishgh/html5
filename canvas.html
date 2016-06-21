@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>circle</title>
+	<style type="text/css">
+		canvas{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/app_200.png" id="app">
+	<canvas id="cas" width="220" height="280"></canvas>
+	<script type="text/javascript">
+		var myCanvas = document.getElementById("cas");
+		var ctx = myCanvas.getContext("2d");
+		var img1 = document.getElementById("app");
+		ctx.drawImage(img1,10,10);
+		ctx.font="20px courier";
+		ctx.fillText("扫描以上二维码",30,240);
+		ctx.font="14px courier";
+		ctx.fillText("下载益网App(iOS/Android)",14,265);
+		var img2 = new Image();
+		img2.src = myCanvas.toDataURL("png");
+		document.body.appendChild(img2);
+	</script>
+</body>
+</html>

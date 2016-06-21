@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5学堂 - H5course - http://www.h5course.com</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <link rel="stylesheet" href="css/taobaobase.css">
+    <style>
+    body {
+        font-size: x;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="list">
+            <li>HTML5学堂</li>
+            <li>移动端开发</li>
+            <li>模拟手机联系人导航</li>
+            <li>a~z的拖拽</li>
+            <li>touchmove的问题</li>
+            <li>使用elementFromPoint实现兼容</li>
+        </ul>
+    </div>
+    <div id="con"></div>
+    <script src="zepto.min.js"></script>
+    <script>
+    var con = document.getElementById('con');
+    var list = document.getElementById('list');
+    list.addEventListener('touchmove', function(e) {
+        var x = e.touches[0].pageX;
+        var y = e.touches[0].pageY;
+        var target = document.elementFromPoint(x, y);
+        con.innerHTML = target.innerHTML;
+    }, false);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>geolocation</title>
+    <style type="text/css">
+    div.map {
+        width: 96%;
+        height: 250px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="output"></div>
+    <div id="mapHolderGoogle" class="map"></div>
+    <div id="mapHolderBaidu" class="map"></div>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <!-- altitude:高度，海拔;latitude:纬度;longitude:经度 -->
+    <script type="text/javascript">
+    (function() {
+        var outputDiv = document.getElementById("output");
+        var mapHolderGoogleDiv = document.getElementById("mapHolderGoogle");
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var lng = position.coords.longitude,
+                lat = position.coords.latitude;
+            outputDiv.innerHTML = "经度：" + lng + "<br/>纬度：" + lat;
+            var latlon = new google.maps.LatLng(lat, lng);
+            var myOptions = {
+                center: latlon,
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.SMALL
+                }
+            };
+            var map = new google.maps.Map(mapHolderGoogleDiv, myOptions);
+            var marker = new google.maps.Marker({
+                position: latlon,
+                map: map,
+                title: "You are here!"
+            });
+        }, function(error) {
+            outputDiv.innerHTML = error.code + ":" + error.message;
+        }, {
+            altitudeAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        });
+    })();
+    </script>
+</body>
+
+</html>

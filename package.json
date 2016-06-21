@@ -1,0 +1,20 @@
+{
+  "name": "html5",
+  "version": "1.0.0",
+  "description": "frontend demos",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "@git@github.com:jellyfishgh/html5.git"
+  },
+  "keywords": [
+    "frontend",
+    "h5"
+  ],
+  "author": "jellyfishgh",
+  "license": "MIT"
+}

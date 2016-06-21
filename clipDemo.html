@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clip | Rect Demo</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    h1,
+    h2 {
+        margin-bottom: 15px;
+    }
+    
+    .block {
+        margin-bottom: 20px;
+        width: 600px;
+    }
+    
+    .block-body {
+        position: relative;
+        width: 600px;
+        height: 450px;
+    }
+    
+    .block-body img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    
+    .rect1 img {
+        clip: rect(0, 164px, 161px, 0);
+    }
+    
+    .rect2 img {
+        clip: rect(13px, 0, 161px, 30px);
+    }
+    
+    .rect3 img {
+        clip: rect(13px, 164px, 0, 30px);
+    }
+    
+    .rect4 img {
+        clip: rect(auto, 164px, 161px, 30px);
+    }
+    
+    .rect5 img {
+        clip: rect(13px, 164px, 161px, auto);
+    }
+    
+    .rect6 img {
+        clip: rect(13px, auto, 161px, 30px);
+    }
+    
+    .rect7 img {
+        clip: rect(13px, 164px, auto, 30px);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clip中Rect()函数测试Demo</h1>
+        <div class="block">
+            <h2 class="block-title">元素默认显示</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect1">
+            <h2 class="block-title">rect(0, 164px, 161px, 0)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect2">
+            <h2 class="block-title">right值小于left值：rect(13px, 0, 161px, 30px)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect3">
+            <h2 class="block-title">boottom值小于top值：rect(13px, 164px, 0, 30px)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect4">
+            <h2 class="block-title">rect(auto, 164px, 161px, 30px)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect5">
+            <h2 class="block-title">rect(13px, 164px, 161px, auto)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect6">
+            <h2 class="block-title">rect(13px, auto, 161px, 30px)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+        <div class="block rect7">
+            <h2 class="block-title">rect(13px, 164px, auto, 30px)</h2>
+            <div class="block-body"><img src="clip.jpg" alt=""></div>
+        </div>
+    </div>
+</body>
+
+</html>

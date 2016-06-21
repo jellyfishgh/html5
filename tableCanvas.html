@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>tableCanvas</title>
+        <style type="text/css">
+        body{
+            padding: 0;
+            margin: 0;
+        }
+        div#container{
+            width: 96%;
+            margin: 2%;
+            background-color: #fff;
+            padding: 0;
+        }
+        div#center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            /*margin-bottom: -50%;*/
+            transform: translate(-50%, -50%);
+        }
+        .loading{
+
+        }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="center" class="loading"></div>
+        </div>
+        <script type="text/javascript" src="xmlhttp.js"></script>
+        <script>
+        (function(container, center){
+            function opeJson(json){
+                container.removeChild(center);
+                container.appendChild(initTable(json));
+            }
+            function initTable(json){
+                var table = document.createElement("table");
+
+                var caption = document.createElement("caption");
+                caption.innerHTML = json.name;
+                table.appendChild(caption);
+
+                var thead = document.createElement("thead");
+                table.appendChild(thead);
+
+                var tfoot = document.createElement("tfoot");
+                table.appendChild(tfoot);
+
+                var tbody = document.createElement("tbody");
+                table.appendChild(tbody);
+
+            }
+            var xhr = createXHR(opeJson, 'json'),
+            url = "http://localhost:3000/table";
+            xhr.open(ulr, 'GET', true);
+            xhr.send(null);
+        })(document.getElementById("container"), document.getElementById("center"));
+        </script>
+    </body>
+</html>
