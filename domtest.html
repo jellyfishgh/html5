@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>dom test</title>
+</head>
+
+<body>
+    <script>
+        // 如果被插入的节点已经存在于当前文档的文档树中,则那个节点会首先从原先的位置移除,然后再插入到新的位置.
+        var body = document.body;
+        var p = document.createElement("p");
+        p.innerHTML = "test";
+        body.appendChild(p);
+        body.appendChild(p);
+        p.innerHTML = "abc";
+        body.appendChild(p);
+    </script>
+</body>
+
+</html>
