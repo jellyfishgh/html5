@@ -13,6 +13,8 @@
         var p = document.createElement("p");
         p.innerHTML = "test";
         body.appendChild(p);
+        p.style.display = "none";
+        console.log(document.body.childNodes);
         body.appendChild(p);
         p.innerHTML = "abc";
         body.appendChild(p);
